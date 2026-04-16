@@ -9,7 +9,7 @@ public class UserTest {
     @DisplayName("사용자의 이름이 공백일 경우 예외 발생")
     @ValueSource(strings = {"", " "})
     void createUser_fail_when_empty_name(String emptyName) {
-        // when
+        // when & then
         Assertions.assertThatThrownBy(() -> new User(emptyName))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("[ERROR] 사용자의 이름은 공백일 수 없습니다.");
