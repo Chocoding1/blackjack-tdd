@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.List;
 
 public class CommaSplitter {
@@ -5,7 +6,8 @@ public class CommaSplitter {
     public static List<String> split(String input) {
         validateEmptyInput(input);
 
-        return List.of();
+        return Arrays.stream(input.split(","))
+                .toList();
     }
 
     private static void validateEmptyInput(String input) {
