@@ -26,4 +26,14 @@ public class BettingAmountTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("[ERROR] 배팅 금액은 숫자 형태로 입력해야 합니다.");
     }
+
+    @ParameterizedTest
+    @DisplayName("배팅 금액이 0이하일 경우 예외 발생")
+    @ValueSource(strings = {"0", "-1"})
+    void createBettingAmount_fail_when_amount_less_than_zero(String invalidAmount) {
+        // when & then
+        assertThatThrownBy(() -> new BettingAmount(invalidAmount))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("[ERROR] 배팅 금액 0보다 커야 합니다.");
+    }
 }
