@@ -46,6 +46,7 @@
 **11. [출력] 참여자별 최종 수익을 출력한다.**
 
 ## tdd 사고 과정
+### 기능 목록 1
 - 사용자의 이름을 검증하는 거니까 User 클래스의 기능으로 분류하자.
   - UserTest를 우선 만들고 입력값이 공백일 경우 예외를 발생시키는 테스트를 작성하자.
     <img width="947" height="267" alt="image" src="https://github.com/user-attachments/assets/eb70e135-4777-4d3e-b2aa-988ccf655ccd" />
@@ -72,7 +73,7 @@
     - CommaSplitter 클래스가 존재하지 않아 컴파일 에러 발생
       <img width="1276" height="241" alt="image" src="https://github.com/user-attachments/assets/0b34a27a-7010-4538-89b7-73f00562371e" />
     - CommaSpliiter를 생성하자.
-      <img width="663" height="256" alt="image" src="https://github.com/user-attachments/assets/2e06c4d7-7ede-47b4-8f61-b48ab00b2153" />
+      <br><img width="663" height="256" alt="image" src="https://github.com/user-attachments/assets/2e06c4d7-7ede-47b4-8f61-b48ab00b2153" />
     - 테스트 재실행 -> split() 메서드가 존재하지 않아 컴파일 에러 발생
       <img width="1276" height="156" alt="image" src="https://github.com/user-attachments/assets/a13a86b5-052d-40ce-8e2b-8ad60ba0d578" />
     - CommaSplitter에 split() 메서드 생성
@@ -85,7 +86,7 @@
       <br><img width="605" height="123" alt="image" src="https://github.com/user-attachments/assets/a122f411-a5d1-4042-8e08-1a5f56ec6b5f" />
   - 문자열을 쉼표로 구분하여 리스트로 올바르게 반환하는지 테스트하자.
     - 실패하는 테스트 작성
-      <img width="727" height="333" alt="image" src="https://github.com/user-attachments/assets/ad59bfde-cea3-4166-8d9e-8e727104c937" />
+      <br><img width="727" height="333" alt="image" src="https://github.com/user-attachments/assets/ad59bfde-cea3-4166-8d9e-8e727104c937" />
     - split() 메서드가 List를 반환할 것을 기대했으나 현재 반환 타입이 void라서 테스트 실패
       <img width="1349" height="104" alt="image" src="https://github.com/user-attachments/assets/8f9ec38d-d6d4-4402-8389-37b435081593" />
     - CommaSplitter.split()의 반환 타입을 List로 변경
@@ -97,13 +98,41 @@
     - 테스트 재시도 -> 입력값이 공백인 경우에는 검증 로직에서 걸렬 테스트 실패
       <img width="1029" height="196" alt="image" src="https://github.com/user-attachments/assets/6e0f4e3d-65fd-40a3-a2f2-e86c844acbe8" />
     - 테스트 케이스 수정
-      <img width="707" height="307" alt="image" src="https://github.com/user-attachments/assets/f20d5e76-88bd-4feb-9d3d-bc288dd3b112" />
+      <br><img width="707" height="307" alt="image" src="https://github.com/user-attachments/assets/f20d5e76-88bd-4feb-9d3d-bc288dd3b112" />
     - 테스트 재시도 -> 성공!
       <br><img width="310" height="152" alt="image" src="https://github.com/user-attachments/assets/aa359ed5-ef3c-4ae7-8f0c-4b06614eed1f" />
   - 구현하다 보니 CommaSplitter에서 `pobi  ,   jason`을 입력받는 경우 User에 공백이 포함된 이름이 들어간다. User 생성자로 들어오는 input에 대해 문자열 양 쪽 공백을 제거하는 코드를 추가하자.
 
-
-
-
-
-
+### 기능 목록 2
+- 배팅 금액의 클래스명은 BettingAmount로 하자.
+- 우선 BettingAmountTest 클래스를 생성하자.
+  <br><img width="322" height="44" alt="image" src="https://github.com/user-attachments/assets/ddb81642-137a-42c0-a21a-24da5b4b27bd" />
+- 배팅 금액이 공백인 경우를 테스트하자.
+  - 실패 테스트 작성
+    <br><img width="642" height="245" alt="image" src="https://github.com/user-attachments/assets/841ac6db-0ff9-4cc5-a835-56609cffd29a" />
+  - BettingAmount가 존재하지 않아 테스트 실패
+    <img width="1251" height="112" alt="image" src="https://github.com/user-attachments/assets/2657a323-afce-4671-bde1-5b7287738223" />
+  - BettingAmount를 생성하고 문자열을 파라미터로 받는 생성자를 생성하자.
+    <br><img width="455" height="177" alt="image" src="https://github.com/user-attachments/assets/7a1b5c1d-197c-43e9-872d-daa085b3bfe3" />
+  - 테스트 재시도 -> 예외 발생을 예상했으나 예외가 발생하지 않아 테스트 실패
+    <img width="1214" height="156" alt="image" src="https://github.com/user-attachments/assets/091af54c-65eb-42ce-880a-bbde288f6df3" />
+  - 입력값이 공백일 경우 예외를 발생하는 코드를 작성하자.
+    <img width="711" height="219" alt="image" src="https://github.com/user-attachments/assets/1e42013b-f418-4f1b-9bd0-360297723a82" />
+  - 테스트 재시도 -> 성공!
+    <br><img width="311" height="132" alt="image" src="https://github.com/user-attachments/assets/60ab56cd-18f7-47d6-b7d7-7758c44f26c9" />
+- 배팅 금액이 숫자 타입이 아닐 경우를 테스트하자.
+  - 실패 테스트 작성
+    <img width="1024" height="199" alt="image" src="https://github.com/user-attachments/assets/3860c2b1-022e-48c2-9ed9-45995d658057" />
+  - 예외가 발생하는 것을 예상했으나 예외가 발생하지 않아 테스트 실패
+    <img width="1263" height="163" alt="image" src="https://github.com/user-attachments/assets/67fbd911-28f1-4370-b4da-0e5deca82dd5" />
+  - 배팅 금액이 숫자 타입이 아닐 경우 예외를 발생시키는 로직을 추가하자.
+    <img width="765" height="421" alt="image" src="https://github.com/user-attachments/assets/51cf5917-e421-4fe4-b652-f271fce31f8d" />
+  - 테스트 재시도 -> 성공!
+    <br><img width="310" height="120" alt="image" src="https://github.com/user-attachments/assets/4ae25d23-fa5e-4adc-aafd-a90523adbb6e" />
+- 배팅 금액이 0 이하인 경우를 테스트하자.
+  - 실패 테스트 작성
+    <img width="1034" height="203" alt="image" src="https://github.com/user-attachments/assets/d7761802-85dd-4ea0-8657-16308431a2c8" />
+  - 예외가 발생하는 것을 예상했으나 예외가 발생하지 않아 테스트 실패
+    <img width="1292" height="142" alt="image" src="https://github.com/user-attachments/assets/54272725-26e0-424f-8700-28b8f1b573c5" />
+  - 배팅 금액이 0 이하일 경우 예외를 발생시키는 로직을 추가하자.
+    <img width="710" height="110" alt="image" src="https://github.com/user-attachments/assets/041a74ed-be38-44d0-9ce8-c1500d6adf54" />
