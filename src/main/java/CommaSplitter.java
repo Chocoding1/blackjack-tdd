@@ -1,7 +1,11 @@
+import java.util.List;
+
 public class CommaSplitter {
 
-    public static void split(String input) {
+    public static List<String> split(String input) {
         validateEmptyInput(input);
+
+        return List.of();
     }
 
     private static void validateEmptyInput(String input) {
