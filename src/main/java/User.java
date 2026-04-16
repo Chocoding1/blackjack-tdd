@@ -4,7 +4,7 @@ public class User {
 
     public User(String name) {
         validateEmpty(name);
-        this.name = name;
+        this.name = name.strip();
     }
 
     private void validateEmpty(String name) {
