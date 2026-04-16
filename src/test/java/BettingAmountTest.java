@@ -3,7 +3,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-public class BettingAmount {
+public class BettingAmountTest {
 
     @ParameterizedTest
     @DisplayName("입력값이 공백일 경우 예외 발생")
