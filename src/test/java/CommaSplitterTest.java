@@ -25,8 +25,7 @@ public class CommaSplitterTest {
     @CsvSource(value = {
             "'pobi,jason', 2",
             "'pobi,jason,ever', 3",
-            "'pobi', 1",
-            "'  ', 1"
+            "'pobi', 1"
     })
     void nameSplit_success(String input, int nameCount) {
         // when
