@@ -34,6 +34,6 @@ public class BettingAmountTest {
         // when & then
         assertThatThrownBy(() -> new BettingAmount(invalidAmount))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("[ERROR] 배팅 금액 0보다 커야 합니다.");
+                .hasMessage("[ERROR] 배팅 금액은 0보다 커야 합니다.");
     }
 }
