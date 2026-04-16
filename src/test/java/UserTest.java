@@ -18,7 +18,7 @@ public class UserTest {
     }
 
     @ParameterizedTest
-    @DisplayName("사용자의 이름에 특수문자가 존재할 경우 예외 발생")
+    @DisplayName("사용자의 이름에 특수문자, 공백, 숫자가 존재할 경우 예외 발생")
     @ValueSource(strings = {"pobi*", "po bi", "pobi123"})
     void createUser_fail_when_name_contains_invalid_string(String invalidName) {
         // when & then
