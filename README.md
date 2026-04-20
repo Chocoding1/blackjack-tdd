@@ -136,3 +136,6 @@
     <img width="1292" height="142" alt="image" src="https://github.com/user-attachments/assets/54272725-26e0-424f-8700-28b8f1b573c5" />
   - 배팅 금액이 0 이하일 경우 예외를 발생시키는 로직을 추가하자.
     <img width="710" height="110" alt="image" src="https://github.com/user-attachments/assets/041a74ed-be38-44d0-9ce8-c1500d6adf54" />
+
+### 기능 목록 3
+- 어, 기능 목록 3에서 나오는 도메인은 카드라고 생각하면 될 거 같은데, 카드 도메인에는 딱히 로직이 없는데 어떻게 TDD로 구현하지? 얘는 그냥 바로 만들어도 되나?
