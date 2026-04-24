@@ -35,4 +35,16 @@ public class RankTest {
         // when & then
         assertEquals(expectedScore, rank.getScore());
     }
+
+    @ParameterizedTest
+    @DisplayName("J, Q, K Rank는 10의 점수를 반환한다.")
+    @CsvSource({
+            "J, 10",
+            "Q, 10",
+            "K, 10"
+    })
+    void tenRankScoreTest(Rank rank, int expectedScore) {
+        // when & then
+        assertEquals(expectedScore, rank.getScore());
+    }
 }
