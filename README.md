@@ -139,3 +139,53 @@
 
 ### 기능 목록 3
 - 어, 기능 목록 3에서 나오는 도메인은 카드라고 생각하면 될 거 같은데, 카드 도메인에는 딱히 로직이 없는데 어떻게 TDD로 구현하지? 얘는 그냥 바로 만들어도 되나?
+- **별다른 도메인 로직이 존재하지 않는 값객체는 도메인 규칙을 정의하는 용도로 TDD를 진행하자.**
+- Card 객체는 필드로 Rank와 Suit을 가지고 있다. 이 두 클래스 먼저 TDD를 진행하자.(사전에 한 설계를 가지고 TDD를 하는 것이기 때문에 이렇게 바로 필드 구조가 나온 것. 만약 처음 설계를 진행했다면 Card의 필드로 Rank와 Suit을 두는 것을 바로 생각하지는 못 했을 것.)
+- Rank를 먼저 테스트하자. Rank는 Card의 숫자를 나타내는 클래스로 enum 클래스로 만들 것이다.
+  - enum 클래스도 값객체다. 특별한 도메인 로직은 존재하지 않지만, 도메인 규칙은 존재하기 때문에 이를 정의하는 용도로 테스트를 작성해보자.
+  - 도메인 규칙을 정의해보자.
+     1. 2 ~ 9 Rank는 점수로 2 ~ 9를 각각 반환한다.
+     2. Ace Rank는 점수로 1을 반환한다.
+     3. J, Q, K는 점수로 10을 반환한다.
+  - RankTest라는 이름으로 테스트 클래스를 생성하자.
+    <br><img width="333" height="68" alt="image" src="https://github.com/user-attachments/assets/3e3173f4-5ac0-4ba5-975e-256275697e73" />
+  - 1번 규칙 먼저 테스트를 작성하자.
+    <img width="577" height="417" alt="image" src="https://github.com/user-attachments/assets/abaa51d6-69e6-45c5-b0b4-760d5f1a0226" />
+  - 이젠 돌려보지 않아도 알겠지만 그래도 테스트를 돌려보자.
+    <img width="1165" height="108" alt="image" src="https://github.com/user-attachments/assets/0b59c9f4-5f82-489a-ae6d-9f84b471b92f" />
+     - Rank 클래스가 존재하지 않아서 테스트 실패
+  - Rank 클래스를 생성하자.
+    <br><img width="264" height="63" alt="image" src="https://github.com/user-attachments/assets/00a351fe-ccae-4832-945b-338b39529537" />
+  - 테스트 재시도 -> getScore()라는 메서드가 존재하지 않아서 테스트 실패
+    <img width="1166" height="113" alt="image" src="https://github.com/user-attachments/assets/8e7af180-d438-4b91-8b39-cc7b40a7dd93" />
+  - getScore()메서드를 생성하자.
+    <br><img width="334" height="109" alt="image" src="https://github.com/user-attachments/assets/15094481-a7de-4dc3-ad41-19ae5d5e49b1" />
+  - 테스트 재시도 -> score 필드가 존재하지 않아서 컴파일 에러 발생
+    <img width="1203" height="334" alt="image" src="https://github.com/user-attachments/assets/64d0ca1f-6b9b-4e44-9dc3-b2e923cd0cc6" />
+  - 테스트 코드에서 정의한 score 필드를 추가하자.
+    <br><img width="355" height="264" alt="image" src="https://github.com/user-attachments/assets/d304c325-41f9-4e27-b530-c3201e9eea74" />
+    - score를 final로 설정하여 생성자도 같이 추가했음
+  - 테스트 재시도 -> Rank enum 객체가 존재하지 않아서 컴파일 에러 발생
+    <img width="1196" height="233" alt="image" src="https://github.com/user-attachments/assets/694178b4-9ed6-40eb-aba8-1272fb03b846" />
+  - 테스트에 정의한 Rank enum 객체들을 추가하자.
+    <br><img width="353" height="482" alt="image" src="https://github.com/user-attachments/assets/300ba417-0128-432e-acba-bf1f5cb6afc4" />
+  - 테스트 재시도 -> 성공!
+    <br><img width="310" height="275" alt="image" src="https://github.com/user-attachments/assets/469f09d5-5222-48a4-a089-41548d02a4f7" />
+  
+  - 2번 규칙(ACE Rank)의 테스트 코드를 작성하자.
+    <br><img width="495" height="221" alt="image" src="https://github.com/user-attachments/assets/2755fe7a-4589-47f0-a244-331eac377cff" />
+  - 테스트 실행 -> ACE 객체가 없어서 테스트 실패
+    <img width="1165" height="107" alt="image" src="https://github.com/user-attachments/assets/6919c828-3d31-40f8-b78c-b45d71d8deb6" />
+  - ACE 객체를 추가하자.
+    <br><img width="295" height="226" alt="image" src="https://github.com/user-attachments/assets/4e51c03f-00b2-485f-8b0b-6eace2b2032d" />
+  - 테스트 재시도 -> 성공!
+    <br><img width="313" height="73" alt="image" src="https://github.com/user-attachments/assets/7d7e8bcc-0279-4060-bae0-1e6cded2d03c" />
+    
+  - 3번 규칙(J, Q, K)의 테스트 코드를 작성하자.
+    <br><img width="533" height="243" alt="image" src="https://github.com/user-attachments/assets/f19a7d6e-9c04-4526-a434-757cd230cb3a" />
+  - 테스트 실행 -> J, Q, K 객체가 존재하지 않아 테스트 실패
+    <img width="1333" height="310" alt="image" src="https://github.com/user-attachments/assets/237d3b8d-13c6-4524-8306-7f7d607d030a" />
+  - J, Q, K 객체를 추가하자.
+    <br><img width="295" height="265" alt="image" src="https://github.com/user-attachments/assets/cc3db0df-fee4-491a-9178-ac57e45d495d" />
+  - 테스트 재시도 -> 성공!
+- 이렇게 Card의 숫자를 나타내는 Rank 클래스를 도메인 규칙에 맞게 생성했다. 누군가가 J가 11을 반환하도록 코드를 수정해도 테스트에서 잡아낼 수 있게 되었다.
