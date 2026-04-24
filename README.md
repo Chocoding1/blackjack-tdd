@@ -191,3 +191,7 @@
 - 이렇게 Card의 숫자를 나타내는 Rank 클래스를 도메인 규칙에 맞게 생성했다. 누군가가 J가 11을 반환하도록 코드를 수정해도 테스트에서 잡아낼 수 있게 되었다.
 - +) view에서 각 Rank를 숫자로 표현해야 하는 요구사항을 발견했다. 각 Rank마다 어울리는 format을 반환하도록 필드를 추가하자. (이것은 view를 위한 필드이므로 테스트 코드를 작성하지 않아도 된다고 판단했다. TDD는 로직을 테스트하는 것이지, 값 자체를 테스트하는 것이 아니기 때문)
   <img width="420" height="468" alt="image" src="https://github.com/user-attachments/assets/3812a3d6-5d2d-44fe-aafe-8c2632180e5f" />
+
+- 다음으로 Suit을 생성하자.
+  - Suit은 Card의 모양을 나타내는 객체이다. 특별한 도메인 규칙이 존재하지 않고, 단순히 view를 위한 format 필드가 필요하기 때문에 TDD를 진행하지 않고 바로 생성하자.
+    <br><img width="378" height="310" alt="image" src="https://github.com/user-attachments/assets/11e4b2c6-8e93-41c2-be1f-b2004dbdd2d3" />
