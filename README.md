@@ -189,3 +189,5 @@
     <br><img width="295" height="265" alt="image" src="https://github.com/user-attachments/assets/cc3db0df-fee4-491a-9178-ac57e45d495d" />
   - 테스트 재시도 -> 성공!
 - 이렇게 Card의 숫자를 나타내는 Rank 클래스를 도메인 규칙에 맞게 생성했다. 누군가가 J가 11을 반환하도록 코드를 수정해도 테스트에서 잡아낼 수 있게 되었다.
+- +) view에서 각 Rank를 숫자로 표현해야 하는 요구사항을 발견했다. 각 Rank마다 어울리는 format을 반환하도록 필드를 추가하자. (이것은 view를 위한 필드이므로 테스트 코드를 작성하지 않아도 된다고 판단했다. TDD는 로직을 테스트하는 것이지, 값 자체를 테스트하는 것이 아니기 때문)
+  <img width="420" height="468" alt="image" src="https://github.com/user-attachments/assets/3812a3d6-5d2d-44fe-aafe-8c2632180e5f" />
