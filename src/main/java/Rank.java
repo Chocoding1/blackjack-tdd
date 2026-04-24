@@ -9,6 +9,9 @@ public enum Rank {
     SEVEN(7),
     EIGHT(8),
     NINE(9),
+    J(10),
+    Q(10),
+    K(10),
     ;
 
     private final int score;
