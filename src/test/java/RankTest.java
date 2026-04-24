@@ -1,7 +1,10 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RankTest {
 
@@ -19,6 +22,17 @@ public class RankTest {
     })
     void rankScoreTest(Rank rank, int expectedScore) {
         // when & then
-        Assertions.assertEquals(expectedScore, rank.getScore());
+        assertEquals(expectedScore, rank.getScore());
+    }
+
+    @Test
+    @DisplayName("ACE Rank는 1의 점수를 반환한다.")
+    void aceRankScoreTest() {
+        // given
+        Rank rank = Rank.ACE;
+        int expectedScore = 1;
+
+        // when & then
+        assertEquals(expectedScore, rank.getScore());
     }
 }
