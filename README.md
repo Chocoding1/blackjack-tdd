@@ -221,3 +221,12 @@
     <img width="578" height="485" alt="image" src="https://github.com/user-attachments/assets/0cf56c5d-784a-4a07-9436-d95fa8daa21e" />
   - 테스트 재시도 -> 성공!
     <br><img width="310" height="73" alt="image" src="https://github.com/user-attachments/assets/c45b5772-f4c9-4667-8e47-c5aaab5ccdba" />
+
+- 이제 Card도 만들었으니, 모든 카드들을 가지고 있는 객체가 필요하다. 이 객체의 이름은 Deck으로 하자.(블랙잭에서 덱은 카드 한 더미를 의미하며, 조커를 제외한 52장의 카드로 구성되어 있음)
+- 이 Deck의 역할을 생각해보자.
+  1. Deck 초기화(52장의 Card 객체들을 생성하여 가지고 있어야 한다.)
+  2. Card 셔플(52장의 Card 객체들을 순서대로 가지고 있는 것이 아니라 섞어야 한다.)
+  3. Card 드로우(플레이어와 딜러에게 카드를 한 장씩 나눠줘야 한다.)
+  4. Deck에 Card가 없는데 드로우할 경우 예외 처리
+- 첫 번째 역할부터 테스트 코드를 짜자.
+  - Deck은 처음 생성될 때 52장의 카들르 생성하여 가지고 있어야 한다.
