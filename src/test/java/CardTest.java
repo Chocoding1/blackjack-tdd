@@ -14,4 +14,15 @@ public class CardTest {
         // when & then
         assertThat(card).isNotNull();
     }
+
+    @Test
+    @DisplayName("Card는 Rank와 Suit이 같으면 같은 객체이다.")
+    void card_equalsAndHashCode_test() {
+        // given
+        Card card1 = new Card(Rank.ACE, Suit.CLOVER);
+        Card card2 = new Card(Rank.ACE, Suit.CLOVER);
+
+        // when & then
+        assertThat(card1).isEqualTo(card2);
+    }
 }
