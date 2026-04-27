@@ -195,3 +195,29 @@
 - 다음으로 Suit을 생성하자.
   - Suit은 Card의 모양을 나타내는 객체이다. 특별한 도메인 규칙이 존재하지 않고, 단순히 view를 위한 format 필드가 필요하기 때문에 TDD를 진행하지 않고 바로 생성하자.
     <br><img width="378" height="310" alt="image" src="https://github.com/user-attachments/assets/11e4b2c6-8e93-41c2-be1f-b2004dbdd2d3" />
+
+- 다음으로 Rank와 Suit을 필드로 가지는 Card를 생성하자.
+  - 테스트를 짜기에 앞서, Card의 도메인 로직이나 규칙이 존재하는지 고민하자.
+  - 고민한 결과, 아직 Card의 도메인 로직이 떠오르지 않는다.
+  - 도메인 규칙은 Rank와 Suit에서 적용해서 Card에서 따로 적용할 건 없어보이지만, 한 가지 테스트를 해야 한다.
+  - 동등성 테스트이다. 기본적으로 Card는 식별자가 존재하지 않고, Rank와 Suit을 기준으로 식별하기 때문에 Rank와 Suit이 같다면 같은 Card로 봐야 한다.
+  - 또한 Card는 Rank와 Suit을 파라미터로 받아 생성하도록 할 예정이다.
+  - 따라서 두 가지의 테스트 케이스를 짤 수 있다.
+    1. Card는 Rank와 Suit으로 생성할 수 있다.
+    2. Card는 Rank와 Suit이 같다면 같은 객체이다.
+   - 이제 첫 번째 테스트 케이스부터 짜자.
+   - CardTest라는 이름의 테스트 클래스를 생성하고 Card 정상 생성 테스트 코드를 짰다.
+     <img width="535" height="263" alt="image" src="https://github.com/user-attachments/assets/a311204f-d5f5-408f-bd6b-a489c6bdcd2f" />
+   - Card 클래스가 존재하지 않아 컴파일 에러가 발생하므로 Card 클래스를 생성하자.(필드인 Rank와 Suit도 한 번에 만들어줬다.)
+     <br><img width="430" height="218" alt="image" src="https://github.com/user-attachments/assets/065cce6a-847d-4ffe-8de2-f1606a9a889a" />
+   - 테스트 실행 -> 성공!
+     <br><img width="311" height="80" alt="image" src="https://github.com/user-attachments/assets/adda3d76-7388-4613-ab1c-75ba5bebd131" />
+   - 이제 두 번째 테스트 케이스를 짜자.
+     <br><img width="505" height="223" alt="image" src="https://github.com/user-attachments/assets/f7524b95-6c4a-4ba3-80d2-7d7c8984335e" />
+  - 테스트 실행 -> 두 객체가 달라 테스트 실패
+    <img width="538" height="146" alt="image" src="https://github.com/user-attachments/assets/0ba18506-3655-4f5e-ac7d-cea4383dde7c" />
+    - Card 클래스에서 equals&hashcode를 오버라이딩하지 않아 필드가 같은 두 객체를 같다고 보지 않는다.
+  - Card 클래스 내에 equals&hashcode를 오버라이딩하자.
+    <img width="578" height="485" alt="image" src="https://github.com/user-attachments/assets/0cf56c5d-784a-4a07-9436-d95fa8daa21e" />
+  - 테스트 재시도 -> 성공!
+    <br><img width="310" height="73" alt="image" src="https://github.com/user-attachments/assets/c45b5772-f4c9-4667-8e47-c5aaab5ccdba" />
